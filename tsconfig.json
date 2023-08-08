@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "react-native-toolbelt": ["./src/index"]
+      "react-native-toolbelt": ["index"],
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -23,6 +29,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "verbatimModuleSyntax": true
+    // "verbatimModuleSyntax": true
   }
 }
