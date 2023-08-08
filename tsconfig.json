@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "react-native-toolbelt": ["index"],
-      "@components": ["components"],
-      "@components/*": ["components/*"],
-      "@hooks": ["hooks"],
-      "@hooks/*": ["hooks/*"],
-      "@utils": ["utils"],
-      "@utils/*": ["utils/*"],
+      "react-native-toolbelt": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

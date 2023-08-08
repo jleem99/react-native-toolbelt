@@ -1,8 +1,8 @@
 import React from 'react'
 import { Image, ImageProps, Platform, StyleSheet, View } from 'react-native'
 import Animated from 'react-native-reanimated'
-import useFadeInAnimation from '@hooks/useFadeInAnimation'
-import sanitizeContainerStyle from '@utils/sanitizeContainerStyle'
+import { useFadeInAnimation } from '../hooks'
+import { sanitizeContainerStyle } from '../utils'
 
 export interface FadeInProps {
 	/**
