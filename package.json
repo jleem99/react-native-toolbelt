@@ -1,6 +1,6 @@
 {
   "name": "react-native-toolbelt",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Comprehensive toolkit for React Native development. Dive into a curated collection of components, hooks, utilities, and scripts designed to streamline and elevate your React Native projects.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -61,6 +61,7 @@
     "@types/react-native": "0.70.0",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
+    "babel-plugin-module-resolver": "^5.0.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.46.0",
@@ -133,8 +134,18 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
+      [
+        "commonjs",
+        {
+          "configFile": true
+        }
+      ],
+      [
+        "module",
+        {
+          "configFile": true
+        }
+      ],
       [
         "typescript",
         {
