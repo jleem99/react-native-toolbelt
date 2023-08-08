@@ -1,13 +1,6 @@
-import {
-	ImageStyle,
-	StyleProp,
-	StyleSheet,
-	TextStyle,
-	ViewStyle,
-} from 'react-native'
+import { StyleProp, StyleSheet } from 'react-native'
 import { isUndefined, omitBy } from 'lodash-es'
-
-export type Style = ViewStyle | TextStyle | ImageStyle
+import { Style } from './types'
 
 export default function sanitizeContainerStyle<
 	T extends Style & { elevation?: number },
