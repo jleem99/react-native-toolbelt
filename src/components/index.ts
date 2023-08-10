@@ -2,6 +2,8 @@
 
 export { default as FadeInImage } from './FadeInImage'
 export { default as FadeInImageBackground } from './FadeInImageBackground'
+export { default as GradientTint } from './GradientTint'
 
 export * from './FadeInImage'
 export * from './FadeInImageBackground'
+export * from './GradientTint'
