@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Defs, LinearGradient, Rect, Stop, Svg } from 'react-native-svg'
 import useLayout from '../hooks/useLayout'
@@ -33,6 +33,9 @@ export interface GradientTintProps {
 
 	/** y2 - Defaults to `1` */
 	y2?: number
+
+	/** 레이아웃 로드 시 호출 */
+	onLayoutLoad?: () => void
 }
 
 const GradientTint = ({
@@ -43,6 +46,7 @@ const GradientTint = ({
 	x2 = 0,
 	y1 = 0,
 	y2 = 1,
+	onLayoutLoad,
 }: GradientTintProps) => {
 	const profile = useMemo(
 		() => (interpolateProfile ? interpolateProfileX2(rawProfile) : rawProfile),
@@ -50,6 +54,11 @@ const GradientTint = ({
 	)
 	const [layout, onLayout] = useLayout()
 	const ratio = layout.width ? layout.height / layout.width : 1
+
+	useEffect(() => {
+		if (layout.width) onLayoutLoad?.()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [layout.width])
 
 	return (
 		<View
