@@ -2,5 +2,6 @@
 
 export { default as useFadeInAnimation } from './useFadeInAnimation'
 export { default as useLayout } from './useLayout'
+export { default as useShallowMemo } from './useShallowMemo'
 
 export * from './useLayout'
