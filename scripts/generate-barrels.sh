@@ -8,7 +8,7 @@ set -e
 IFS=$'\n'
 
 function generate_barrels {(
-	cd "$1"
+	pushd "$1" > /dev/null
 
 	### Remove Existing Barrel ###
 	rm -f "$BARREL_NAME"
@@ -40,6 +40,11 @@ function generate_barrels {(
 		[ -n "$(cat $file.* $file/index.* 2>/dev/null | grep -E '^export' | grep -vE '^export (default|{ default })')" ] &&
 			echo "export * from './$file'" >> "$BARREL_NAME"
 	done
+
+	popd > /dev/null
+
+	### prettier ###
+	[ -x "$(command -v prettier)" ] && prettier --write "$1/$BARREL_NAME"
 )}
 
 for dir in $@; do
