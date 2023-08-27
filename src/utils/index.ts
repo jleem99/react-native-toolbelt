@@ -4,5 +4,6 @@ export { default as createStyledComponent } from './createStyledComponent'
 export { default as decomposeContainerStyle } from './decomposeContainerStyle'
 export { default as shallowEqual } from './shallowEqual'
 
-export * from './memo'
+export * from './common'
+export * from './react'
 export * from './types'
