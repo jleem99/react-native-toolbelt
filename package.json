@@ -89,8 +89,12 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "@react-navigation/bottom-tabs": "^6.0.0",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^6.0.0",
     "react": "*",
     "react-native": "*",
+    "react-native-gesture-handler": "^2.8.0",
     "react-native-reanimated": "^2.12.0 || ^3.0.0",
     "react-native-svg": "^13.0.0"
   },
