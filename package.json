@@ -34,7 +34,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install",
-    "generate-barrels": "./scripts/generate-barrels.sh src/{components,hooks,utils,.}"
+    "generate-barrels": "./scripts/generate-barrels.sh src/{components/{list,pressable,.},hooks/{navigation,.},utils/{react,.},.}"
   },
   "keywords": [
     "react-native",
