@@ -7,9 +7,9 @@ import {
 	ViewStyle,
 	useWindowDimensions,
 } from 'react-native'
-import { useItemLayout } from 'src/hooks/useItemLayout'
 import FlatList, { FlatListProps } from './FlatList'
 import { ListItemComponentProps } from './types'
+import { useItemLayout } from '../../hooks/useItemLayout'
 import { SubPartial } from '../../utils'
 
 interface CarouselProps<T, P extends ListItemComponentProps<T>>

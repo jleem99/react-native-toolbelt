@@ -4,7 +4,7 @@ import { useLayout } from '../hooks'
 
 export interface AbsolutePositionProps {
 	/**
-	 * Position of the position relative to a layout.
+	 * Position relative to a layout.
 	 *
 	 * @example
 	 * ```tsx
