@@ -44,26 +44,21 @@ const AbsolutePosition = ({
 }: AbsolutePositionProps) => {
 	const [contentLayout, onContentLayout] = useLayout()
 
+	const translateX =
+		relativeLayout.x +
+		position.x * relativeLayout.width -
+		contentLayout.width * anchor.x +
+		offset.x
+	const translateY =
+		relativeLayout.y +
+		position.y * relativeLayout.height -
+		contentLayout.height * anchor.y +
+		offset.y
+
 	return (
 		<View
 			onLayout={onContentLayout}
-			style={[
-				styles.absolute,
-				{
-					translateX:
-						relativeLayout.x +
-						position.x * relativeLayout.width -
-						contentLayout.width * anchor.x +
-						offset.x,
-				},
-				{
-					translateY:
-						relativeLayout.y +
-						position.y * relativeLayout.height -
-						contentLayout.height * anchor.y +
-						offset.y,
-				},
-			]}
+			style={[styles.absolute, { transform: [{ translateX }, { translateY }] }]}
 		>
 			{children}
 		</View>
