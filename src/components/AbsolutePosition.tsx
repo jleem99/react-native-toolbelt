@@ -16,6 +16,13 @@ export interface AbsolutePositionProps {
 	position: { x: number; y: number }
 
 	/**
+	 * Anchor point of the component.
+	 *
+	 * @default { x: 0.5, y: 0.5 }
+	 */
+	anchor?: { x: number; y: number }
+
+	/**
 	 * Layout of a relative component.
 	 */
 	relativeLayout: LayoutRectangle
@@ -30,6 +37,7 @@ export interface AbsolutePositionProps {
 
 const AbsolutePosition = ({
 	position,
+	anchor = { x: 0.5, y: 0.5 },
 	relativeLayout,
 	offset = { x: 0, y: 0 },
 	children,
@@ -42,15 +50,17 @@ const AbsolutePosition = ({
 			style={[
 				styles.absolute,
 				{
-					left:
+					translateX:
 						relativeLayout.x +
 						position.x * relativeLayout.width -
-						contentLayout.width / 2 +
+						contentLayout.width * anchor.x +
 						offset.x,
-					top:
+				},
+				{
+					translateY:
 						relativeLayout.y +
 						position.y * relativeLayout.height -
-						contentLayout.height / 2 +
+						contentLayout.height * anchor.y +
 						offset.y,
 				},
 			]}
