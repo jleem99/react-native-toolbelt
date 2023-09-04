@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { shallowEqual } from '../utils'
+import { shallowEqual } from '../../utils'
 
 export default function useShallowMemo<T extends Record<string, any>>(
 	value: T,

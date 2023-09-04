@@ -34,7 +34,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install",
-    "generate-barrels": "./scripts/generate-barrels.sh src/{components/{list,pressable,.},hooks/{navigation,.},utils/{react,.},.}"
+    "generate-barrels": "./scripts/generate-barrels.sh src/{components/{@{list,pressable},.},hooks/{@{common,navigation},.},utils/{@react,.},.}"
   },
   "keywords": [
     "react-native",
@@ -160,6 +160,7 @@
     ]
   },
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "use-immer": "^0.9.0"
   }
 }

@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import FlatList, { FlatListProps } from './FlatList'
 import { ListItemComponentProps } from './types'
-import { useItemLayout } from '../../hooks/useItemLayout'
+import { useItemLayout } from '../../hooks'
 import { SubPartial } from '../../utils'
 
 interface CarouselProps<T, P extends ListItemComponentProps<T>>

@@ -3,6 +3,6 @@
 export { default as useBeforeRemoveEffect } from './useBeforeRemoveEffect'
 export { default as useIsFocusedRef } from './useIsFocusedRef'
 
+export * from './@utility'
 export * from './useBeforeRemoveEffect'
 export * from './useNavigationHooks'
-export * from './utility-hooks'

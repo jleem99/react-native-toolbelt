@@ -3,7 +3,7 @@ import { ListRenderItem } from 'react-native'
 import { noop } from 'lodash'
 import { FlatListIndexContext } from './FlatListIndexContext'
 import { FlatListProps } from './types'
-import Pressable from '../../pressable/Pressable'
+import { Pressable } from '../../@pressable'
 import { ListItemComponentProps } from '../types'
 
 export default function useFlatListRenderer<
