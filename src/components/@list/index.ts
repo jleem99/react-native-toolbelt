@@ -2,6 +2,10 @@
 
 export { default as Carousel } from './Carousel'
 export { default as FlatList } from './FlatList'
+export { default as MapList } from './MapList'
+export { default as ScrollView } from './ScrollView'
 
 export * from './FlatList'
+export * from './MapList'
+export * from './ScrollView'
 export * from './types'
