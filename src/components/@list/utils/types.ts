@@ -28,9 +28,6 @@ export type WithVirtualizedListBaseProps<T> = T & {
 	paddingHorizontal?: number
 	extraPaddingBottom?: number
 	useTransparentBottomSpace?: boolean
-
-	/** useHeaderOptions의 useTransparentHeader 사용 시 발생하는 헤더 높이 차이를 보정 */
-	isInsideTransparentHeader?: boolean
 }
 
 export type WithGestureHandlerVirtualizedListBaseProps<T> =
