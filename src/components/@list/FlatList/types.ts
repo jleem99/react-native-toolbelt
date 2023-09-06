@@ -6,8 +6,10 @@ import {
 import { ListItemComponentProps } from '../types'
 import { WithGestureHandlerVirtualizedListBaseProps } from '../utils/types'
 
-export interface FlatListProps<T, P extends ListItemComponentProps<T>>
-	extends WithGestureHandlerVirtualizedListBaseProps<
+export interface FlatListProps<
+	T,
+	P extends ListItemComponentProps<T> = ListItemComponentProps<T>,
+> extends WithGestureHandlerVirtualizedListBaseProps<
 		Omit<FlatListDefaultProps<T>, 'renderItem'>
 	> {
 	ListItemComponent: (
