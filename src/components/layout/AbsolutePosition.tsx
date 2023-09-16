@@ -1,6 +1,6 @@
 import React from 'react'
 import { LayoutRectangle, StyleSheet, View, ViewProps } from 'react-native'
-import { useLayout } from '../hooks'
+import { useLayout } from '../../hooks'
 
 export interface AbsolutePositionProps {
 	/**

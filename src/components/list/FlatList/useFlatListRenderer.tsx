@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { ListRenderItem } from 'react-native'
 import { noop } from 'lodash'
 import { FlatListIndexContext } from './FlatListIndexContext'
 import { FlatListProps } from './types'
-import { Pressable } from '../../@pressable'
+import { Pressable } from '../../button'
 import { ListItemComponentProps } from '../types'
 
 export default function useFlatListRenderer<

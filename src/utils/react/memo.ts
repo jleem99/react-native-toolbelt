@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { omit } from 'lodash-es'
-import shallowEqual from '../shallowEqual'
+import shallowEqual from '../common/shallowEqual'
 
 export const propsAreEqualExcept = <P extends Record<string, any>>(
 	exceptions: (keyof P)[],

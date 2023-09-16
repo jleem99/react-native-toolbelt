@@ -1,6 +1,6 @@
 import { StyleProp, StyleSheet } from 'react-native'
 import { difference, omit, pick } from 'lodash-es'
-import { Style } from './types'
+import { Style } from '../types'
 
 const CONTAINER_STYLE_KEYS = [
 	/** @see {@link module:react-native/ViewStyle} */

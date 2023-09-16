@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Defs, LinearGradient, Rect, Stop, Svg } from 'react-native-svg'
-import { useLayout } from '../hooks'
-import { propsAreEqualExcept } from '../utils'
+import { useLayout } from '../../hooks'
+import { propsAreEqualExcept } from '../../utils'
 
 export type GradientProfile = [number, number][]
 

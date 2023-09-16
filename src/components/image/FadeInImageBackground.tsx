@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import {
 	ImageBackground,
 	ImageBackgroundProps,
@@ -7,8 +7,8 @@ import {
 } from 'react-native'
 import Animated from 'react-native-reanimated'
 import { FadeInProps } from './FadeInImage'
-import { useFadeInAnimation } from '../hooks'
-import createStyledComponent from '../utils/createStyledComponent'
+import { useFadeInAnimation } from '../../hooks'
+import { createStyledComponent } from '../../utils'
 
 export type FadeInImageBackgroundProps =
 	PropsWithChildren<ImageBackgroundProps> & FadeInProps

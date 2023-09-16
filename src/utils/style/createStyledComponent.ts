@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleProp } from 'react-native'
 import { Merge } from 'type-fest'
-import { Style } from './types'
+import { Style } from '../types'
 
 /**
  * Creates styled (and/or proped) component

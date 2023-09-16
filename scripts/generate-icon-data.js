@@ -1,34 +1,37 @@
-const fs = require('fs')
+const { promises: fs } = require('fs')
 const path = require('path')
+const prettier = require('prettier')
+const prettierConfig = require('../.prettierrc.js')
 
-const ASSET_ICON_PATH = './assets/icons'
-const OUTFILE_PATH = './src/components/common/atoms/svg/SvgIcon/SvgIconMap.ts'
+const ASSET_ICON_PATH = './src/assets/icons'
+const OUTFILE_PATH = './src/components/common/svg/SvgIcon/SvgIconMap.ts'
 
-removeDSStore()
-normalizeIconPaths()
-generateIconData()
+;(async function main() {
+	await Promise.all([removeDSStore(), normalizeIconPaths()])
+	await generateIconData()
+})()
 
-function removeDSStore() {
-	fs.rmSync(path.join(ASSET_ICON_PATH, '.DS_Store'), { force: true })
-	fs.rmSync(path.join(ASSET_ICON_PATH, '.DS-Store'), { force: true })
+async function removeDSStore() {
+	await fs.rm(path.join(ASSET_ICON_PATH, '.DS_Store'), { force: true })
+	await fs.rm(path.join(ASSET_ICON_PATH, '.DS-Store'), { force: true })
 }
 
-function normalizeIconPaths() {
-	const icons = fs.readdirSync(ASSET_ICON_PATH)
+async function normalizeIconPaths() {
+	const icons = await fs.readdir(ASSET_ICON_PATH)
 	for (const icon of icons) {
 		const normalizedIconName = icon.replace(/_/g, '-')
-		fs.renameSync(
+		await fs.rename(
 			path.join(ASSET_ICON_PATH, icon),
 			path.join(ASSET_ICON_PATH, normalizedIconName),
 		)
 	}
 }
 
-function generateIconData() {
+async function generateIconData() {
 	const imports = []
 	const iconMapEntries = []
 
-	const icons = fs.readdirSync(ASSET_ICON_PATH).sort()
+	const icons = (await fs.readdir(ASSET_ICON_PATH)).sort()
 	for (const icon of icons) {
 		const iconName = path.parse(icon).name
 		const componentName = iconName.replace(/-/g, '_').toUpperCase()
@@ -50,5 +53,9 @@ export type SvgIconName = keyof typeof SvgIconMap
 export default SvgIconMap
 `
 
-	fs.writeFileSync(OUTFILE_PATH, file)
+	const formatted = prettier.format(file, {
+		...prettierConfig,
+		parser: 'typescript',
+	})
+	await fs.writeFile(OUTFILE_PATH, formatted)
 }

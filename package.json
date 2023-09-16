@@ -34,7 +34,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install",
-    "generate-barrels": "./scripts/generate-barrels.sh src/{components/{@{list,pressable},.},hooks/{@{common,navigation},.},utils/{@react,.},.}"
+    "generate-barrels": "./scripts/generate-barrels.sh src/{{components,hooks,utils}/{*,.},.}"
   },
   "keywords": [
     "react-native",
@@ -58,8 +58,8 @@
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
     "@types/lodash-es": "^4.17.8",
-    "@types/react": "~17.0.21",
-    "@types/react-native": "0.70.0",
+    "@types/react": "^18.2.21",
+    "@types/react-native": "^0.72.2",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "commitlint": "^17.0.2",

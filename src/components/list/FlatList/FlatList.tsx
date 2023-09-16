@@ -15,6 +15,7 @@ const FlatList = <T, P extends ListItemComponentProps<T>>({
 	useIndexAsKey,
 	columnWrapperStyle,
 	keyExtractor,
+	// @ts-ignore
 	FlatListComponent = FlatListAnimated,
 	...props
 }: FlatListProps<T, P>) => {

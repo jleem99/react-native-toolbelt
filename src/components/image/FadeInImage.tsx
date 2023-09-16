@@ -2,8 +2,8 @@ import React from 'react'
 import { Image, ImageProps, Platform, StyleSheet, View } from 'react-native'
 import Animated from 'react-native-reanimated'
 import { pick } from 'lodash-es'
-import { useFadeInAnimation } from '../hooks'
-import { decomposeContainerStyle } from '../utils'
+import { useFadeInAnimation } from '../../hooks'
+import { decomposeContainerStyle } from '../../utils'
 
 export interface FadeInProps {
 	/**
