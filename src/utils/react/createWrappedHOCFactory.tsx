@@ -1,18 +1,18 @@
 import React from 'react'
 import { getDisplayName } from './component'
 
-export function createWrappedHOCFactory<T>(
+export default function createWrappedHOCFactory<T>(
 	WrappingComponent: React.ComponentType<T>,
-	memoize = false,
+	{ memoize = false, props }: { memoize?: boolean; props?: T } = {},
 ) {
 	return function withWrappingComponent<P>(
 		Component: React.ComponentType<P>,
-		wrappingComponentProps: T | ((props: P) => T) = {} as T,
+		wrappingComponentProps: T | ((props: P) => T) = props ?? ({} as T),
 	) {
-		const HOC = (props: P) => (
+		const HOC = (hocProps: P) => (
 			<WrappingComponent
 				{...(wrappingComponentProps instanceof Function
-					? wrappingComponentProps(props)
+					? wrappingComponentProps(hocProps)
 					: wrappingComponentProps)}
 			>
 				<Component {...(props as P & JSX.IntrinsicAttributes)} />

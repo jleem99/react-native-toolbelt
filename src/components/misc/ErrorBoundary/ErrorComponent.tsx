@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
+		paddingHorizontal: 24,
 	},
 	header: {
 		fontSize: 24,
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		fontSize: 16,
+		marginTop: 8,
 		marginBottom: 16,
 	},
 })
