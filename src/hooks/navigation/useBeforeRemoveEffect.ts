@@ -10,7 +10,7 @@ export default function useBeforeRemoveEffect(
 	useEffect(() => {
 		const unsubscribe = navigation.addListener('beforeRemove', effect)
 		return unsubscribe
-		// eslint-disable-next-line react-hooks/exhaustive-deps, @typescript-eslint/no-unsafe-assignment
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [navigation, ...deps])
 }
 
