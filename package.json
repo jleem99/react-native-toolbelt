@@ -1,6 +1,6 @@
 {
   "name": "react-native-toolbelt",
-  "version": "0.1.0-alpha.17",
+  "version": "0.1.0-alpha.18",
   "description": "Comprehensive toolkit for React Native development. Dive into a curated collection of components, hooks, utilities, and scripts designed to streamline and elevate your React Native projects.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -34,7 +34,8 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install",
-    "generate-barrels": "./scripts/generate-barrels.sh src/{{components,hooks,utils}/{*,.},.}"
+    "generate-barrels": "./scripts/generate-barrels.sh src/{{components,hooks,utils}/{*,.},.}",
+    "bump:prerelease": "npm version prerelease"
   },
   "keywords": [
     "react-native",
