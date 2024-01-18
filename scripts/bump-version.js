@@ -45,20 +45,12 @@ const CYAN = '\x1b[36m'
 /*                                  Utilities                                 */
 /* ************************************************************************** */
 
-async function bumpToVersion({
-	appConfig,
-	bumpType,
-	versionStr,
-	currentVerStr,
-	currentVerCode,
-}) {
+async function bumpToVersion({ appConfig, bumpType, versionStr, currentVerStr, currentVerCode }) {
 	const verCode = currentVerCode + 1
 
 	console.log(`Bumping ${bumpType} version...\n`)
 	console.log(`Current version: ${YELLOW}${currentVerStr}${RESET}`)
-	console.log(
-		`Current versionCode / buildNumber: ${YELLOW}${currentVerCode}${RESET}\n`,
-	)
+	console.log(`Current versionCode / buildNumber: ${YELLOW}${currentVerCode}${RESET}\n`)
 	console.log(`Target version: ${CYAN}${versionStr}${RESET}`)
 	console.log(`Target versionCode / buildNumber: ${CYAN}${verCode}${RESET}`)
 
